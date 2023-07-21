@@ -7,14 +7,13 @@ import { LoginButton } from "./LoginButton";
 import { RegisterButton } from "./RegisterButton";
 
 import closeMenuIcon from "../../images/icon-close-menu.svg";
-import expandArrowIcon from "../../images/icon-arrow-down.svg";
-import collapseArrowIcon from "../../images/icon-arrow-up.svg";
 import todoListIcon from "../../images/icon-todo.svg";
 import calendarIcon from "../../images/icon-calendar.svg";
 import remindersIcon from "../../images/icon-reminders.svg";
 import planningIcon from "../../images/icon-planning.svg";
+import { ExpandedMenuItem } from "./ExpandedMenuItem";
 
-export default function HamburgerMenu() {
+export function HamburgerMenu() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
   const [isFeaturesExpanded, setIsFeaturesExpanded] = useState(false);
   const [isCompanyExpanded, setIsCompanyExpanded] = useState(false);
@@ -53,18 +52,8 @@ export default function HamburgerMenu() {
               />
             </div>
             <ul className="text-base ml-9 mt-10 leading-[2.5rem]">
-              <div
-                className="flex flex-row mb-5"
-                onClick={() => expandFeaturesMenu()}
-              >
-                <li className="h-1">Features</li>
-                <Image
-                  className="expand-arrow h-1.5 w-2.5 flex align-center mt-4 ml-6"
-                  src={isFeaturesExpanded ? collapseArrowIcon : expandArrowIcon}
-                  width={1000}
-                  height={1000}
-                  alt="Arrow icon"
-                />
+              <div onClick={() => expandFeaturesMenu()}>
+                <ExpandedMenuItem text={"Features"} />
               </div>
               {isFeaturesExpanded && (
                 <div className="expanded-menu-items">
@@ -112,22 +101,8 @@ export default function HamburgerMenu() {
                   </ul>
                 </div>
               )}
-              <div
-                className="flex flex-row"
-                onClick={() => expandCompanyMenu()}
-              >
-                <div className="flex flex-row">
-                  <li className="">Company</li>
-                  <Image
-                    className="expand-arrow h-1.5 w-2.5 flex align-center mt-4 ml-6"
-                    src={
-                      isCompanyExpanded ? collapseArrowIcon : expandArrowIcon
-                    }
-                    width={1000}
-                    height={1000}
-                    alt="Down arrow icon"
-                  />
-                </div>
+              <div onClick={() => expandCompanyMenu()}>
+                <ExpandedMenuItem text={"Company"} />
               </div>
               {isCompanyExpanded && (
                 <div className="expanded-menu-items">

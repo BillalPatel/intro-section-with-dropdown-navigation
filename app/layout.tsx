@@ -1,18 +1,20 @@
+"use client";
+
 import "./globals.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import HamburgerMenu from "./components/HamburgerMenu";
+import { Logo } from "./components/Logo";
+import { HamburgerMenu } from "./components/HamburgerMenu";
+import { HeaderMenu } from "./components/HeaderMenu";
 import { LoginButton } from "./components/LoginButton";
 import { RegisterButton } from "./components/RegisterButton";
 
-import logo from "../images/logo.svg";
 import hamburgerMenuIcon from "../images/icon-menu.svg";
 
-export const metadata: Metadata = {
-  title: "Intro Section With Dropdown Navigation",
-  description: "Challenge from frontendmentor.io",
-};
+function openHamburgerMenu() {
+  console.log("hello")
+}
 
 export default function RootLayout({
   children,
@@ -25,29 +27,23 @@ export default function RootLayout({
         name="viewport"
         content="width=device-width, initial-scale=1.0"
       ></meta>
-      <body>
+      <body className="bg-[#fafafa]">
         <HamburgerMenu />
-        <header className="flex justify-between my-2 lg:mx-7">
-          <Image
-            className="m-5 h-7 w-auto"
-            src={logo}
-            width={1000}
-            height={1000}
-            alt="Logo"
-          />
-          <div className="hamburger-menu">
+        <header className="flex justify-between my-2 lg:mx-7 lg:mt-3">
+          <div className="flex">
+            <Logo />
+            <HeaderMenu />
+          </div>
+          <div className="hamburger-menu" onClick={() => openHamburgerMenu()}>
             <Image
               className="m-5 h-5 w-auto lg:hidden"
               src={hamburgerMenuIcon}
               width={1000}
               height={1000}
               alt="Hamburger menu icon"
-              // onClick={() => {
-              //   openHamburgerMenu();
-              // }}
             />
           </div>
-          <div>
+          <div className="mx-5 hidden lg:block">
             <LoginButton />
             <RegisterButton />
           </div>

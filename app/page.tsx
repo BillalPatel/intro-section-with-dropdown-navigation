@@ -25,8 +25,8 @@ export default function Home() {
           height={10000}
         />
       </div>
-      <div className="copy lg:row-start-1 lg:col-start-1 lg:text-left lg:flex lg:flex-col lg:w-3/4 lg:ml-44">
-        <h1 className="flex justify-center text-4xl lg:text-8xl mt-11 mb-5 font-bold">
+      <div className="copy lg:row-start-1 lg:col-start-1 lg:text-left lg:flex lg:flex-col lg:w-3/4 lg:ml-44 lg:mt-14">
+        <h1 className="flex justify-center text-4xl lg:text-8xl mt-11 mb-5 font-bold -z-50">
           Make remote work
         </h1>
         <div className="w-full flex justify-center lg:justify-start">
@@ -36,7 +36,7 @@ export default function Home() {
           </p>
         </div>
         <div className="w-full flex justify-center lg:justify-start lg:mt-12">
-          <button className="p-5 rounded-2xl bg-[#141414] text-white my-5 py-3 lg:px-10 lg:py-5 lg:text-left font-semibold lg:text-xl">
+          <button className="p-5 border-2 border-[#141414] rounded-2xl bg-[#141414] text-white my-5 py-3 lg:px-10 lg:py-5 lg:text-left font-semibold lg:text-xl hover:text-[#141414] hover:bg-[#fafafa]">
             Learn more
           </button>
         </div>

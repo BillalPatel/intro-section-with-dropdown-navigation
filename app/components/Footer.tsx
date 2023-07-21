@@ -8,7 +8,7 @@ import makerIcon from "../../images/client-maker.svg";
 
 export default function Footer() {
   return (
-    <div className="flex sm:justify-between mt-4 lg:mt-24 sm:mx-auto">
+    <div className="flex sm:justify-between mt-4 lg:mt-16 sm:mx-auto">
       <Image
         className="mt-5 h-3 lg:h-5"
         src={databizIcon}
@@ -29,6 +29,7 @@ export default function Footer() {
         width={1000}
         height={1000}
         alt="Meet icon"
+        unoptimized={false}
       />
       <Image
         className="mt-5 lg:mt-4 h-4 lg:h-7"
@@ -36,6 +37,8 @@ export default function Footer() {
         width={1000}
         height={1000}
         alt="Maker icon"
+        unoptimized={true}
+        priority
       />
     </div>
   );
