@@ -47,8 +47,10 @@ export default function RootLayout({
               // }}
             />
           </div>
-          <LoginButton />
-          <RegisterButton />
+          <div>
+            <LoginButton />
+            <RegisterButton />
+          </div>
         </header>
         {children}
       </body>
