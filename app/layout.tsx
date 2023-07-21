@@ -1,7 +1,6 @@
 "use client";
 
-import "./globals.css";
-import type { Metadata } from "next";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import { Logo } from "./components/Logo";
@@ -12,15 +11,19 @@ import { RegisterButton } from "./components/RegisterButton";
 
 import hamburgerMenuIcon from "../images/icon-menu.svg";
 
-function openHamburgerMenu() {
-  console.log("hello")
-}
+import "./globals.css";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+
+  function openHamburgerMenu() {
+    setIsHamburgerMenuOpen(true);
+  }
+
   return (
     <html lang="en">
       <meta
@@ -28,7 +31,9 @@ export default function RootLayout({
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <body className="bg-[#fafafa]">
-        <HamburgerMenu />
+        {isHamburgerMenuOpen && (
+          <HamburgerMenu />
+        )}
         <header className="flex justify-between my-2 lg:mx-7 lg:mt-3">
           <div className="flex">
             <Logo />
