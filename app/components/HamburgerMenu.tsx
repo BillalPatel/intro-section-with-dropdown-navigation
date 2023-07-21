@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import "animate.css";
 
 import { LoginButton } from "./LoginButton";
 import { RegisterButton } from "./RegisterButton";
@@ -38,7 +39,7 @@ export function HamburgerMenu(props: any) {
           closeHamburgerMenu();
         }}
       ></div>
-      <div className="hamburger-menu h-screen w-4/6 bg-white text-[#696969] font-semibold absolute top-0 right-0 justify-end">
+      <div className="hamburger-menu animate__animated animate__fadeInRight animate__faster h-screen w-4/6 bg-white text-[#696969] font-semibold absolute top-0 right-0 justify-end">
         <div className="flex justify-end">
           <Image
             onClick={() => closeHamburgerMenu()}
