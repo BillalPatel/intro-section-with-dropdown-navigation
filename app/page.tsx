@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
       <div className="copy lg:row-start-1 lg:col-start-1 lg:text-left lg:flex lg:flex-col lg:w-3/4 lg:ml-44 lg:mt-14">
-        <h1 className="flex justify-center text-4xl lg:text-8xl mt-11 mb-5 font-bold -z-50">
+        <h1 className="flex justify-center text-4xl lg:text-8xl mt-11 mb-5 font-bold">
           Make remote work
         </h1>
         <div className="w-full flex justify-center lg:justify-start">
