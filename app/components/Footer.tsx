@@ -8,35 +8,35 @@ import makerIcon from "../../images/client-maker.svg";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-evenly mt-4 mx-10">
+    <div className="flex sm:justify-between mt-4 lg:mt-24 sm:mx-auto">
       <Image
-        className="m-5 h-4 w-auto flex"
+        className="mt-5 h-3 lg:h-5"
         src={databizIcon}
         width={1000}
         height={1000}
         alt="Databiz icon"
       />
       <Image
-        className="m-5 h-7 w-auto flex"
+        className="mt-5 lg:mt-3 h-6 lg:h-10"
         src={audiophileIcon}
         width={1000}
         height={1000}
-        alt="Databiz icon"
+        alt="Audiophile icon"
       />
       <Image
-        className="m-5 h-4 w-auto"
+        className="mt-5 h-3 lg:h-5"
         src={meetIcon}
         width={1000}
         height={1000}
-        alt="Databiz icon"
+        alt="Meet icon"
       />
       <Image
-        className="m-5 h-5 w-auto"
+        className="mt-5 lg:mt-4 h-4 lg:h-7"
         src={makerIcon}
         width={1000}
         height={1000}
-        alt="Databiz icon"
+        alt="Maker icon"
       />
-    </footer>
+    </div>
   );
 }

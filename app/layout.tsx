@@ -1,15 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Image from "next/image";
 
-import HamburgerMenu from "../app/components/HamburgerMenu";
-import Footer from "../app/components/Footer";
+import HamburgerMenu from "./components/HamburgerMenu";
+import { LoginButton } from "./components/LoginButton";
+import { RegisterButton } from "./components/RegisterButton";
 
 import logo from "../images/logo.svg";
 import hamburgerMenuIcon from "../images/icon-menu.svg";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Intro Section With Dropdown Navigation",
@@ -29,7 +27,7 @@ export default function RootLayout({
       ></meta>
       <body>
         <HamburgerMenu />
-        <header className="flex justify-between my-2">
+        <header className="flex justify-between my-2 lg:mx-7">
           <Image
             className="m-5 h-7 w-auto"
             src={logo}
@@ -44,12 +42,16 @@ export default function RootLayout({
               width={1000}
               height={1000}
               alt="Hamburger menu icon"
+              // onClick={() => {
+              //   openHamburgerMenu();
+              // }}
             />
           </div>
+          <LoginButton />
+          <RegisterButton />
         </header>
         {children}
       </body>
-      <Footer />
     </html>
   );
 }
