@@ -32,7 +32,7 @@ export default function RootLayout({
       ></meta>
       <body className="bg-[#fafafa]">
         {isHamburgerMenuOpen && (
-          <HamburgerMenu />
+          <HamburgerMenu setOpen={setIsHamburgerMenuOpen}/>
         )}
         <header className="flex justify-between my-2 lg:mx-7 lg:mt-3">
           <div className="flex">

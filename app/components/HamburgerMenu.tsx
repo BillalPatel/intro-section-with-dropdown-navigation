@@ -13,11 +13,14 @@ import remindersIcon from "../../images/icon-reminders.svg";
 import planningIcon from "../../images/icon-planning.svg";
 import { ExpandedMenuItem } from "./ExpandedMenuItem";
 
-export function HamburgerMenu() {
+export function HamburgerMenu(props: any) {
+  const { setOpen } = props;
   const [isFeaturesExpanded, setIsFeaturesExpanded] = useState(false);
   const [isCompanyExpanded, setIsCompanyExpanded] = useState(false);
 
-  function closeHamburgerMenu() {}
+  function closeHamburgerMenu() {
+    setOpen(false);
+  }
 
   function expandFeaturesMenu() {
     setIsFeaturesExpanded(!isFeaturesExpanded);
@@ -39,14 +42,14 @@ export function HamburgerMenu() {
         <div className="flex justify-end">
           <Image
             onClick={() => closeHamburgerMenu()}
-            className="m-5 h-6 w-auto mt-7 mr-8"
+            className="m-5 h-6 w-auto mt-6 mr-6"
             src={closeMenuIcon}
             width={1000}
             height={1000}
             alt="Close hamburger menu icon"
           />
         </div>
-        <ul className="text-base ml-9 mt-10 leading-[2.5rem]">
+        <ul className="text-base ml-9 mt-6 leading-[2.5rem]">
           <div onClick={() => expandFeaturesMenu()}>
             <ExpandedMenuItem text={"Features"} />
           </div>
@@ -111,7 +114,7 @@ export function HamburgerMenu() {
           <li className="">Careers</li>
           <li className="">About</li>
         </ul>
-        <div className="btn-container text-sm flex flex-col mt-5 mx-3">
+        <div className="btn-container text-sm flex flex-col mt-1 mx-3">
           <LoginButton />
           <RegisterButton />
         </div>
